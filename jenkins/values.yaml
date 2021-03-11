@@ -93,8 +93,8 @@ master:
                                   args: "cat"
                                   resourceRequestCpu: "500m"
                                   resourceLimitCpu: "1000m"
-                                  resourceRequestMemory: "1Gi"
-                                  resourceLimitMemory: "2Gi"
+                                  resourceRequestMemory: "2Gi"
+                                  resourceLimitMemory: "8Gi"
                               volumes:
                                 - emptyDirVolume:
                                     memory: false
