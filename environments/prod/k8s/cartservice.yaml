@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: eshop-cartservice
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: eshop-cartservice
@@ -17,10 +18,16 @@ spec:
           ports:
           - containerPort: 8091
           env:
-            - name: SPRING_REDIS_HOST
-              value: redis
+            - name: SPRING_REDIS_CLUSTER_NODES
+              value: "redis-redis-cluster.default.svc.cluster.local:6379"
+            - name: SPRING_REDIS_CLUSTER_MAX-REDIRECTS
+              value: "3"
             - name: SPRING_RABBITMQ_HOST
-              value: rabbitmq
+              value: "rabbitmq.default.svc.cluster.local"
+            - name: SPRING_RABBITMQ_USERNAME
+              value: "rabbitmq"
+            - name: SPRING_RABBITMQ_PASSWORD
+              value: "rabbitmq password"
 ---
 apiVersion: v1
 kind: Service
