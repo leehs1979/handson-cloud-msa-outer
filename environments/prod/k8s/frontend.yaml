@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: eshop-frontend
-          image: gcr.io/architect-certification-289902/31/eshop-frontend:2
+          image: gcr.io/architect-certification-289902/31/eshop-frontend:4
           ports:
           - containerPort: 8080
           resources:
