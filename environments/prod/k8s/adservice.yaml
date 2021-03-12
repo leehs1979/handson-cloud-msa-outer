@@ -34,4 +34,7 @@ spec:
   selector:
     app: eshop-adservice
   ports:
-  - port: 8095
+  - name: api
+    port: 8095
+    targetPort: 8095
+  
